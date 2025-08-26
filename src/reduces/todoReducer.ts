@@ -28,7 +28,7 @@ export const todoReducer = (todos: Todo[], action: TodosActions) => {
     case "add":
       return [
         ...todos,
-        { id: Date.now(), text: action.payload.text, completed: false },
+        { id: action.payload.id, text: action.payload.text, completed: false },
       ];
     case "toggle":
       return todos.map((todo) =>
@@ -37,8 +37,8 @@ export const todoReducer = (todos: Todo[], action: TodosActions) => {
           : todo
       );
     case "remove":
-      return todos.filter((todo) => action.payload.id !== todo.id);
+      return todos.filter((todo) => todo.id !==  action.payload.id);
     default:
-        return todos;  
+      return todos;
   }
 };
