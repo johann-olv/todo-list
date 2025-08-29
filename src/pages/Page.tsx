@@ -1,9 +1,9 @@
 "use react";
-import { Sun } from "lucide-react";
-import { DateTime } from "./components/DateTime";
-import { InputTodo } from "./components/Input";
-import { TodoList } from "./components/TodoList";
-import { ThemeSwitch } from "./components/ThemeSwitch";
+
+import { DateTime } from "../components/DateTime";
+import { InputTodo } from "../components/Input";
+import { TodoList } from "../components/TodoList";
+import { ThemeSwitch } from "../components/ThemeSwitch";
 
 export const Page = () => {
   return (
