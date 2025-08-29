@@ -20,8 +20,12 @@ type RemoveAction = {
     id: number;
   };
 };
+type setAll = {
+  type: "setAll";
+    payload: Todo[];
+}
 
-export type TodosActions = AddAction | ToggleAction | RemoveAction;
+export type TodosActions = AddAction | ToggleAction | RemoveAction | setAll;
 
 export const todoReducer = (todos: Todo[], action: TodosActions) => {
   switch (action.type) {
@@ -38,6 +42,8 @@ export const todoReducer = (todos: Todo[], action: TodosActions) => {
       );
     case "remove":
       return todos.filter((todo) => todo.id !==  action.payload.id);
+    case "setAll":
+      return action.payload;
     default:
       return todos;
   }
